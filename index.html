@@ -1,9 +1,30 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=https://localhost:8080">
-  </head>
-  <body>
-    <p>Du wirst weitergeleitet …</p>
-  </body>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>eBay Code erhalten</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background: #f4f4f4;
+    }
+    code {
+      background: #eee;
+      padding: 0.2rem 0.4rem;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>✅ eBay Code empfangen</h1>
+  <p>Bitte kopiere diesen Code in dein Script:</p>
+  <p><strong>Code:</strong> <code id="code">Wird geladen...</code></p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    document.getElementById("code").textContent = code || "❌ Kein Code in URL gefunden.";
+  </script>
+</body>
 </html>
